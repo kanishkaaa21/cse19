@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display property</title>
+    <style>
+        *{box-sizing: border-box;margin: 0;padding: 0;font-family: Arial, sans-serif;}
+         body{ background: #f7f8fb;color: #111;padding: 20px;}
+        .header{
+            display: block;
+            background:#222;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            margin-bottom: 18px;
+         }
+        .main{max-width:420px ;margin:0 auto;}
+        .product-card{
+            background:#fff;
+            border: 1px solid #e0e4ef;
+            padding: 12px;
+            height: auto;
+            width: 100%;
+            border-radius: 6px;
+        }
+        .product-image{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            margin-bottom:0px;
+            margin-top:20px;
+            border: 1px solid #ddd;
+        }
+        .product-title{
+            font-size: 25px;
+            margin-bottom: 6px;
+        }
+        .product-dese{
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        .price-row{margin-bottom: 12px;}
+        .price{
+            font-weight: 700;
+            color:green ;
+            margin-right: 8px;
+            display: inline;
+        }
+        .old-price{
+            color: rgb(179, 177, 177);
+            text-decoration: line-through;
+            display: inline;
+        }
+        .add-cart{
+              display: block;
+              width:100%;
+              padding:10px;
+              background: rgb(25, 107, 201); 
+              color:#fff;
+              border:none;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header" >
+       <h1>ShopEasy</h1>
+    </header>
+
+     <main class="main">
+        <section class="product-card">
+          <img class="product-image" src="https://i.pinimg.com/736x/d8/df/c1/d8dfc118a0d42551ff4084d10a23254d.jpg" alt="T-Shirt">
+          <h2 class="product-title">Classic T-Shirt Designs</h2>
+          <h3>Best Quality TShirt</h3>
+          <p class="product-dese">Soft.breathable cotton.Regular fit. Available in multiple colours.</p>
+          <div class="price-row">
+          <span class="price">Rs 5,000</span>
+          <span class="old-price">Rs 7,000</span>
+        </div>
+        <button class="add-cart">Add To Cart</button>
+    </section> 
+ </main>
+    
+</body>
+</html>
