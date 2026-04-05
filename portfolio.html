@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-commerce Navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Container */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #131921;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff9900;
+        }
+
+        /* Nav Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #ff9900;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            border: none;
+            width: 200px;
+        }
+
+        .search-bar button {
+            padding: 6px 10px;
+            border: none;
+            background-color: #ff9900;
+            cursor: pointer;
+        }
+
+        /* Cart */
+        .cart {
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .search-bar {
+                display: none;
+                flex-direction: column;
+                background-color: #232f3e;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .nav-links a {
+                padding: 8px 0;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links.active,
+            .search-bar.active {
+                display: flex;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">ShopEasy</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Deals</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="search-bar" id="searchBar">
+        <input type="text" placeholder="Search products...">
+        <button>🔍</button>
+    </div>
+
+    <div class="cart">🛒 Cart</div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+        document.getElementById("searchBar").classList.toggle("active");
+    }
+</script>
+
+</body>
+</html>

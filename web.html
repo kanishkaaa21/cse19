@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeLearn - Programming Notes</title>
+<style>
+/* ====== General ====== */
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+}
+
+nav {
+    background:#333;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+nav .logo { font-size:1.8em; font-weight:bold; }
+nav .nav-links { display:flex; gap:20px; }
+nav .nav-links a {
+    color:white;
+    text-decoration:none;
+    padding:5px 10px;
+    border-radius:5px;
+    transition:0.2s;
+}
+nav .nav-links a:hover { background:#555; }
+nav input[type="text"] { padding:5px 10px; border-radius:5px; border:none; width:200px; margin-top:10px; }
+
+/* ====== Welcome Section ====== */
+.welcome-section {
+    width:100%;
+    background:#007BFF;
+    color:white;
+    text-align:center;
+    padding:40px 10px;
+    font-size:1.8em;
+    font-weight:bold;
+    margin-bottom:30px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ====== Container ====== */
+.container {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:20px;
+}
+
+/* ====== Language Flex Layout ====== */
+.language-flex {
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    justify-content:center;
+    width:100%;
+}
+
+/* ====== Language Card ====== */
+.language-card {
+    background:#fff;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.2);
+    flex:1 1 250px; /* flexible width, min 250px */
+    max-width:300px;
+}
+
+.language-card input { display:none; }
+.language-card label {
+    display:block;
+    font-size:1.3em;
+    font-weight:bold;
+    cursor:pointer;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+/* ====== Topics Section ====== */
+.topics-section {
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+}
+.language-card input:checked ~ .topics-section { display:flex; }
+
+.topics-list input { display:none; }
+.topics-list label {
+    display:block;
+    background:#eee;
+    padding:8px 12px;
+    border-radius:6px;
+    margin-bottom:5px;
+    cursor:pointer;
+    transition:0.2s;
+}
+.topics-list label:hover,
+.topics-list input:checked + label { background:#ddd; font-weight:bold; }
+
+/* ====== Notes Section ====== */
+.notes-section {
+    display:none;
+    background:#fafafa;
+    padding:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    margin-top:10px;
+}
+.topics-list input:checked ~ .notes-section { display:block; }
+.notes-section .important { background:#ffeb3b; font-weight:bold; padding:2px 4px; border-radius:3px; }
+
+/* ====== Footer ====== */
+footer {
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* ====== Responsive ====== */
+@media(max-width:768px) {
+    .language-flex { flex-direction:column; align-items:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== Navigation ====== -->
+<nav>
+    <div class="logo">CodeLearn</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+    <input type="text" placeholder="Search languages...">
+</nav>
+
+<!-- ====== Welcome Section ====== -->
+<div class="welcome-section">
+    Welcome to our Programming Learning Website!
+</div>
+
+<div class="container">
+    <!-- ====== Languages Flex ====== -->
+    <div class="language-flex">
+
+        <!-- ====== Python ====== -->
+        <div class="language-card">
+            <input type="radio" name="language" id="python">
+            <label for="python">Python</label>
+            <div class="topics-section">
+                <div class="topics-list">
+                    <input type="radio" name="python-topic" id="python-topic1">
+                    <label for="python-topic1">Variables</label>
+                    <div class="notes-section">
+                        <h3>Python Variables</h3>
+                        <p>Variables in Python are containers used to store data. Python is <span class="important">dynamically typed</span>. Example: <code>x = 10</code>. Variables can store numbers, strings, lists, dictionaries, and other objects. Scope can be <span class="important">local or global</span>. Proper naming avoids conflicts and improves readability.</p>
+                    </div>
+
+                    <input type="radio" name="python-topic" id="python-topic2">
+                    <label for="python-topic2">Loops</label>
+                    <div class="notes-section">
+                        <h3>Python Loops</h3>
+                        <p>Python has <span class="important">for</span> and <span class="important">while</span> loops. Loops iterate over sequences or run until a condition is false. <span class="important">Break</span> exits a loop, <span class="important">continue</span> skips an iteration. Loops are crucial for automation and repeated tasks.</p>
+                    </div>
+
+                    <!-- Topics 3-10 placeholder -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== Java ====== -->
+        <div class="language-card">
+            <input type="radio" name="language" id="java">
+            <label for="java">Java</label>
+            <div class="topics-section">
+                <div class="topics-list">
+                    <input type="radio" name="java-topic" id="java-topic1">
+                    <label for="java-topic1">Variables</label>
+                    <div class="notes-section">
+                        <h3>Java Variables</h3>
+                        <p>Java is <span class="important">statically typed</span>. Variables store data of specific types. Example: <code>int x = 10;</code>. Scope can be local, instance, or static. Final variables cannot change after initialization. Variables are essential for data manipulation and program flow.</p>
+                    </div>
+
+                    <input type="radio" name="java-topic" id="java-topic2">
+                    <label for="java-topic2">Loops</label>
+                    <div class="notes-section">
+                        <h3>Java Loops</h3>
+                        <p>Java supports <span class="important">for</span>, <span class="important">while</span>, and <span class="important">do-while</span> loops. Loops execute repeatedly based on conditions. <span class="important">Break</span> exits loops, <span class="important">continue</span> skips iterations. Loops are essential for iteration and automation.</p>
+                    </div>
+
+                    <!-- Topics 3-10 placeholder -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== Other Languages Placeholder ====== -->
+        <div class="language-card"><input type="radio" name="language" id="cpp"><label for="cpp">C++</label><div class="topics-section"><div class="topics-list">Placeholder topics</div></div></div>
+        <div class="language-card"><input type="radio" name="language" id="js"><label for="js">JavaScript</label><div class="topics-section"><div class="topics-list">Placeholder topics</div></div></div>
+        <div class="language-card"><input type="radio" name="language" id="htmlcss"><label for="htmlcss">HTML/CSS</label><div class="topics-section"><div class="topics-list">Placeholder topics</div></div></div>
+        <div class="language-card"><input type="radio" name="language" id="csharp"><label for="csharp">C#</label><div class="topics-section"><div class="topics-list">Placeholder topics</div></div></div>
+        <div class="language-card"><input type="radio" name="language" id="ruby"><label for="ruby">Ruby</label><div class="topics-section"><div class="topics-list">Placeholder topics</div></div></div>
+        <div class="language-card"><input type="radio" name="language" id="php"><label for="php">PHP</label><div class="topics-section"><div class="topics-list">Placeholder topics</div></div></div>
+
+    </div> <!-- End of language-flex -->
+</div> <!-- End of container -->
+
+<footer>
+    &copy; 2025 CodeLearn. All rights reserved.
+</footer>
+
+</body>
+</html>

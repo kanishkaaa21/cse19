@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to grid</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: grid;
+            height: auto;
+            width: 210vh;
+            line-height: 100px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: xx-large;
+            border: 7px solid black;
+            gap: 40px;
+            padding: 40px;
+            background-color: rgb(230, 230, 230);
+        }
+        .item1{
+            grid-column: 1/16;
+            grid-row: 1/2;
+            text-align: center;
+            padding: 10px;
+        }
+        .item2{
+            text-align: center;
+            padding: 10px;
+            grid-column:1/4;
+            grid-row: 2/3;
+            border: 1px solid white;
+             background-color: white;
+        }
+        .item3{
+            text-align: center;
+            padding: 10px;
+            grid-column:4/8 ;
+            grid-row: 2/3;
+            border: 1px solid white;
+             background-color: white;
+        }
+        .item4{
+            text-align: center;
+            padding: 10px;
+            grid-column:8/12;
+            grid-row: 2/3;
+            border: 1px solid white;
+            background-color: white;
+        }
+        .item5{
+            text-align: center;
+            grid-column:12/16;
+            grid-row: 2/3;
+            padding: 10px;
+            border: 1px solid white;
+            background-color: white;
+        }
+        .item6{
+            text-align: center;
+            padding: 10px;
+            grid-column:1/16;
+            grid-row: 3/9;
+        }
+        .price { 
+             font-weight: bold; 
+             color: #2c333a; 
+        } 
+        .item img { 
+             width: auto; 
+             height: auto; 
+             object-fit: cover; 
+             border-radius: 6px; 
+             margin-bottom: 10px; 
+        } 
+         .item h3 { 
+             font-size: 40px; 
+             margin: 8px 0; 
+         } 
+       .item p { 
+              font-size: 25px; 
+             color: #555; 
+             margin: 4px 0; 
+        }  
+        @media (max-width: 1024px) { 
+        .container { 
+              grid-template-columns: repeat(2, 1fr); 
+              grid-template-rows: repeat(2,1fr);
+            } 
+        } 
+          @media (max-width: 600px) { 
+        .container { 
+              grid-template-columns: repeat(1,1fr);
+              grid-template-rows: repeat(12,1fr); 
+      } 
+    } 
+    </style>
+ </head>
+ <body>
+    <div class="container">
+        <div class=" item1"><h2>Responsive Product Grid</h2></div>
+        <div class="item item2"><img src="shopping1.webp" alt="Product 1"><h3>Product 1</h3> <p>High-quality item with great features.</p> 
+        <p class="price">₹499</p> </div>
+        <div class="item item3"><img src="shopping2.webp" alt="Product 2"><h3>Product 2</h3><p>Durable and stylish for daily use.</p> 
+        <p class="price">₹799</p></div>
+        <div class="item item4"><img src="shopping3.webp" alt="Product 3"><h3>Product 3</h3> <p>Lightweight and comfortable.</p> 
+        <p class="price">₹1,299</p> </div>
+        <div class="item item5"><img src="shopping5.webp" alt="Product 4"><h3>Product 4</h3> <p>Trendy design with premium quality.</p> 
+        <p class="price">₹999</p> </div>
+        <div class=" item6"></div>
+     </div>
+  </body>
+</html>

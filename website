@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeLearn - Programming Notes</title>
+<style>
+body {margin:0; font-family: Arial, sans-serif; background:#f5f5f5;}
+nav {background:#333; color:white; padding:10px 20px; display:flex; justify-content:space-between; align-items:center;}
+nav .logo {font-size:1.5em; font-weight:bold;}
+nav input[type="text"] {padding:5px; border:none; border-radius:5px; width:200px;}
+
+.container {padding:20px; display:flex; flex-direction:column; align-items:center;}
+
+/* Grid for language selection */
+.language-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap:20px;
+    width:100%;
+    max-width:1000px;
+    margin-top:20px;
+}
+
+.language-card {
+    background:#fff;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.language-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.language-card input {
+    display:none;
+}
+
+.language-card label {
+    cursor:pointer;
+    display:block;
+}
+
+/* Topics Section */
+.topics-section {
+    display:none;
+    flex-direction:column;
+    align-items:flex-start;
+    width:100%;
+    max-width:800px;
+    margin-top:20px;
+}
+
+.language-card input:checked ~ .topics-section {
+    display:flex;
+}
+
+.topics-search input {
+    padding:5px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    width:100%;
+    margin-bottom:15px;
+}
+
+.topics-list {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.topics-list input {
+    display:none;
+}
+
+.topics-list label {
+    padding:10px 15px;
+    background:#eee;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.topics-list label:hover,
+.topics-list input:checked + label {
+    background:#ddd;
+    font-weight:bold;
+}
+
+/* Notes Section */
+.notes-section {
+    display:none;
+    margin-top:20px;
+    background:#fafafa;
+    padding:20px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.topics-list input:checked ~ .notes-section {
+    display:block;
+}
+
+.notes-section h3 {margin-top:0;}
+.notes-section .important {background:#ffeb3b; font-weight:bold; padding:2px 4px; border-radius:3px;}
+
+/* Responsive */
+@media(max-width:768px){
+    .language-grid {grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));}
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">CodeLearn</div>
+    <input type="text" placeholder="Search languages...">
+</nav>
+
+<div class="container">
+    <!-- Language Cards -->
+    <div class="language-grid">
+
+        <!-- Python Card -->
+        <div class="language-card">
+            <input type="radio" name="language" id="python">
+            <label for="python">Python</label>
+
+            <!-- Topics Section -->
+            <div class="topics-section">
+                <div class="topics-search">
+                    <input type="text" placeholder="Search topics...">
+                </div>
+                <div class="topics-list">
+                    <input type="radio" name="python-topic" id="python-topic1">
+                    <label for="python-topic1">Variables</label>
+                    <div class="notes-section" id="python1">
+                        <h3>Python Variables</h3>
+                        <p>Variables in Python are used to store data for later use. Python is <span class="important">dynamically typed</span>, so you don't need to declare the type explicitly. Example: <code>x = 10</code>. Variables can store integers, strings, lists, dictionaries, etc. Proper naming is important for readability, using letters, underscores, and numbers. Reserved keywords cannot be used. Multiple variables can be assigned at once: <code>a, b = 5, 10</code>. Variables are <span class="important">fundamental building blocks</span> of any program. Understanding how to use them efficiently helps in writing clean and maintainable code. Variables can be updated during runtime, and scope matters (local vs global variables). They are critical for <span class="important">data manipulation, calculations, and storing results</span> in Python programs.</p>
+                    </div>
+
+                    <input type="radio" name="python-topic" id="python-topic2">
+                    <label for="python-topic2">Loops</label>
+                    <div class="notes-section" id="python2">
+                        <h3>Python Loops</h3>
+                        <p>Loops allow repeating a block of code multiple times. Python has <span class="important">for</span> and <span class="important">while</span> loops. The <code>for</code> loop iterates over sequences, e.g., <code>for i in range(5):</code>. The <code>while</code> loop executes while a condition is True. Loops can include <span class="important">break</span> to exit early or <span class="important">continue</span> to skip iterations. Nested loops are possible. Loops help reduce code duplication and are essential for <span class="important">data processing, automation, and repetitive tasks</span>. Using loops efficiently improves performance and readability.</p>
+                    </div>
+                    <!-- Add other 8-10 Python topics similarly -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Java Card -->
+        <div class="language-card">
+            <input type="radio" name="language" id="java">
+            <label for="java">Java</label>
+
+            <div class="topics-section">
+                <div class="topics-search">
+                    <input type="text" placeholder="Search topics...">
+                </div>
+                <div class="topics-list">
+                    <input type="radio" name="java-topic" id="java-topic1">
+                    <label for="java-topic1">Variables</label>
+                    <div class="notes-section" id="java1">
+                        <h3>Java Variables</h3>
+                        <p>Java variables store data for program execution. Java is <span class="important">statically typed</span>, so variable types must be declared. Example: <code>int x = 10;</code>. Variables can store primitive types like int, double, char, or objects. Scope matters: <span class="important">local, instance, and static variables</span> have different lifetimes. Java naming conventions should be followed for readability. Variables are <span class="important">critical for computations, storing program state, and object properties</span>. Correct use ensures maintainable and bug-free code.</p>
+                    </div>
+
+                    <input type="radio" name="java-topic" id="java-topic2">
+                    <label for="java-topic2">Loops</label>
+                    <div class="notes-section" id="java2">
+                        <h3>Java Loops</h3>
+                        <p>Java supports <span class="important">for, while,</span> and <span class="important">do-while</span> loops. Loops are essential for executing code repeatedly. The <code>for</code> loop is commonly used for fixed iterations, while <code>while</code> loops depend on a condition. Loops can include <span class="important">break</span> and <span class="important">continue</span>. Nested loops are allowed. Efficient loops improve performance and make code <span class="important">readable and maintainable</span>. Loops are used in <span class="important">data processing, automation, and object manipulation</span>.</p>
+                    </div>
+                    <!-- Add other 8-10 Java topics similarly -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Add C++, JavaScript, HTML/CSS, C#, Ruby, PHP similarly -->
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2025 CodeLearn. All rights reserved.
+</footer>
+
+</body>
+</html>
